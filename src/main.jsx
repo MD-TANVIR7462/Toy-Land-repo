@@ -10,7 +10,14 @@ import {
 import HomeMain from './components/Home/HomeMain.jsx';
 import LoginPage from './components/Login/LoginPage.jsx';
 import Resister from './components/Resister/Resister.jsx';
-import Authprovider from './components/Authprovider/Authprovider.jsx';
+import AuthProvider from './components/providers/AuthProvider.jsx';
+
+
+
+
+
+
+
 
 
 // -----------route setup-------
@@ -18,24 +25,24 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<HomeMain></HomeMain>
+        path: '/',
+        element: <HomeMain></HomeMain>
 
       },
       {
-        path:'/login',
-        element:<LoginPage></LoginPage>
+        path: '/login',
+        element: <LoginPage></LoginPage>
 
       },
       {
-        path:'/resister',
-        element:<Resister></Resister>
+        path: '/resister',
+        element: <Resister></Resister>
 
       },
     ]
-    
+
   },
 ]);
 
@@ -45,8 +52,19 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
- <Authprovider>
- <RouterProvider router={router} />
- </Authprovider>
+
+
+
+
+
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+
+
+
+
+
+
   </React.StrictMode>,
 )

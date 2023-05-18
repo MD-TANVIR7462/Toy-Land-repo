@@ -1,7 +1,14 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
+
+
+
+
+
 const Resister = () => {
+  
+
    const handleResister = (e) =>{
       e.preventDefault()
       const from = e.target
@@ -9,6 +16,8 @@ const Resister = () => {
       const email = from.email.value
       const name = from.name.value
       const password = from.password.value
+
+     
 
 
       console.log(url,name,email,password)
