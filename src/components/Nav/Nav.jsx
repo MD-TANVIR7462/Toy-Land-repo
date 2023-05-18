@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaHome, FaBloggerB, FaSignInAlt } from 'react-icons/fa';
 import Button from '../Button/Button';
-const user = true
+
 const Nav = () => {
+  const [user,setuser]=useState(true)
    return (
       <div className='  ' >
 
@@ -17,8 +18,8 @@ const Nav = () => {
               <li><NavLink to={'/'} className={({ isActive }) => isActive ? 'text-primary ' : 'text-white pl-4'}> Home</NavLink ></li>
 
               <li> <NavLink to={'/Blogs'} className={({ isActive }) => isActive ? " text-primary  pl-4" : "text-white  pl-4 "}> All Toys</NavLink></li>
-              <li> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary pl-4" : "text-white  pl-4 "}> My Toys</NavLink></li>
-              <li> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary pl-4" : "text-white  pl-4 "}> Add A Toy</NavLink></li>
+              <li className={user?'':'hidden'}> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary pl-4" : "text-white  pl-4 "}> My Toys</NavLink></li>
+              <li className={user?'':'hidden'}> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary pl-4" : "text-white  pl-4 "}> Add A Toy</NavLink></li>
               <li> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary  pl-4" : "text-white  pl-4 "}> Blogs</NavLink></li>
             </ul>
           </div>
@@ -32,8 +33,8 @@ const Nav = () => {
             <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-primary  mr-5 flex  items-center' : 'text-white mr-5 flex  items-center'}>Home</NavLink>
 
             <NavLink to={'/Blogs'} className={({ isActive }) => isActive ? "text-primary pl-4 flex  items-center" : "text-white  pl-5 flex  items-center "}> All Toys</NavLink >
-            <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary  pl-4 flex  items-center" : "text-white  pl-5 flex  items-center "}>My Toys</NavLink >
-            <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary  pl-4 flex  items-center" : "text-white  pl-5 flex  items-center "}>Add A Toy</NavLink >
+           <span className={user?'':'hidden'}> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary  pl-4 flex  items-center" : "text-white  pl-5 flex  items-center "}>My Toys</NavLink ></span>
+           <span className={user?'':'hidden'}> <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary  pl-4 flex  items-center" : "text-white  pl-5 flex  items-center "}>Add A Toy</NavLink ></span>
             <NavLink to={'/resister'} className={({ isActive }) => isActive ? " text-primary  pl-4 flex  items-center" : "text-white  pl-5 flex  items-center "}>Blogs</NavLink >
 
           </ul>
@@ -61,7 +62,7 @@ const Nav = () => {
 
               :
               
-              <Link >{<Button>Logout</Button>}</Link>
+              <Link >{<Button>Login</Button>}</Link>
           }
 
 
