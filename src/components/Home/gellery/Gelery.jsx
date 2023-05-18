@@ -45,7 +45,7 @@ const toys = [
       rating: 3.8,
       image: 'https://i.ibb.co/mGRNfnk/depositphotos-246705248-stock-photo-wooden-cart-stuffed-toys-constructor.webp',
    },
-   // Add more toy objects here...
+   
 ];
 
 const Gallery = () => {
