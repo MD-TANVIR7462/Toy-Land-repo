@@ -11,6 +11,7 @@ import HomeMain from './components/Home/HomeMain.jsx';
 import LoginPage from './components/Login/LoginPage.jsx';
 import Resister from './components/Resister/Resister.jsx';
 import AuthProvider from './components/providers/AuthProvider.jsx';
+import ErrorPage from './components/Error/ErrorPage.jsx';
 
 
 
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
