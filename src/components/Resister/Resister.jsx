@@ -1,5 +1,7 @@
 
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 
 
@@ -8,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 const Resister = () => {
   
+   const {CreatUSerEmail}=useContext(AuthContext)
 
    const handleResister = (e) =>{
       e.preventDefault()
@@ -17,7 +20,19 @@ const Resister = () => {
       const name = from.name.value
       const password = from.password.value
 
-     
+      CreatUSerEmail(email,password)
+      .then((userCredential) => {
+       
+         const user = userCredential.user;
+         console.log(user)
+         from.reset()
+      
+       })
+       .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+      console.log(errorMessage)
+       });
 
 
       console.log(url,name,email,password)
@@ -116,7 +131,7 @@ const Resister = () => {
               type="submit"
               className='btn w-full bg-success border-none text-white  shadow-md shadow-gray-300 hover:text-black hover:bg-primary '
             >
-              Log in
+            Resister
             </button>
           </div>
         </form>

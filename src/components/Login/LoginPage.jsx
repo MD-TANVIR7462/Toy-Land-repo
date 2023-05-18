@@ -6,7 +6,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const LoginPage = () => {
 
-   const { googleCreatUSer } = useContext(AuthContext)
+   const { googleCreatUSer,SignInUSer } = useContext(AuthContext)
   
 
 
@@ -15,7 +15,20 @@ const LoginPage = () => {
       const from = e.target
       const email = from.email.value
       const password = from.password.value
-      console.log({ email, password })
+      SignInUSer( email, password )
+      .then((result) => {
+       
+         const user = result.user;
+         console.log(user)
+         from.reset()
+        
+       })
+       .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         console.log(errorMessage)
+       });
+     
    };
 
 
@@ -24,6 +37,7 @@ const LoginPage = () => {
       .then((result) => {
          const user = result.user;
          console.log(user)
+         
    
       })
          .catch((error) => {

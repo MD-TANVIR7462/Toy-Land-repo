@@ -1,16 +1,27 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../Button/Button';
+import { AuthContext } from '../providers/AuthProvider';
 
 
 
 
 const Nav = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState();
+ 
 
-
-
+const {isLoggedIn,signOutUSer}=useContext(AuthContext)
+console.log(isLoggedIn)
+const signout =()=>{
+  
+  signOutUSer()
+  .then(()=>{
+    console.log('successfull')
+  })
+  .catch(error=>{
+    console.log(error)
+  })
+}
 
   return (
     <div className="">
@@ -87,17 +98,19 @@ const Nav = () => {
               <div className="tooltip" data-tip={isLoggedIn.displayName ? isLoggedIn.displayName : 'No-Name'}>
                 <label  className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src=""  />
+                    <img src={isLoggedIn?.photoURL}  />
                   </div>
                 </label>
               </div>
-              <Link >
-                <Button className="bg-primary text-white">Logout</Button>
-              </Link>
+              
+               <button onClick={signout} className='btn btn-primary'>
+                Logout
+               </button>
+              
             </div>
           ) : (
             <Link to={'/login'}>
-              <Button className="bg-primary text-white">Login</Button>
+              <Button  className="bg-primary text-white">Login</Button>
             </Link>
           )}
         </div>
