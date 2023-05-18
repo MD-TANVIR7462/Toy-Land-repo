@@ -38,7 +38,7 @@ const ShopByCategory = () => {
           name: 'Triceratops',
           price: '$27.99',
           rating: 4.6,
-          image: 'https://i.ibb.co/DgMTczt/HTB1-AUttdjfguu-Rj-Sspaq6y-XVXXa-H-jpg-300x300.webp',
+          image: 'https://i.ibb.co/Vt3yMk7/images-5.jpg',
         },
       ],
     },

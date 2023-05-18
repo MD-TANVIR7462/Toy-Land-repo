@@ -3,8 +3,14 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../Button/Button';
 
+
+
+
 const Nav = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState();
+
+
+
 
   return (
     <div className="">
@@ -23,26 +29,26 @@ const Nav = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/Blogs" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
+                <NavLink to="/alltoys" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
                   All Toys
                 </NavLink>
               </li>
               {isLoggedIn && (
                 <>
                   <li>
-                    <NavLink to="/resister" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
+                    <NavLink to="/mytoys" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
                       My Toys
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/resister" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
+                    <NavLink to="/addatoy" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
                       Add A Toy
                     </NavLink>
                   </li>
                 </>
               )}
               <li>
-                <NavLink to="/resister" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
+                <NavLink to="/blog" className={({ isActive }) => isActive ? 'text-primary pl-4' : 'text-white pl-4'}>
                   Blogs
                 </NavLink>
               </li>
@@ -57,20 +63,20 @@ const Nav = () => {
             <NavLink to="/" className={({ isActive }) => isActive ? 'text-primary mr-5 flex items-center' : 'text-white mr-5 flex items-center'}>
               Home
             </NavLink>
-            <NavLink to="/Blogs" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
+            <NavLink to="/alltoys" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
               All Toys
             </NavLink>
             {isLoggedIn && (
               <>
-                <NavLink to="/resister" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
+                <NavLink to="/mytoys" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
                   My Toys
                 </NavLink>
-                <NavLink to="/resister" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
+                <NavLink to="/addatoy" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
                   Add A Toy
                 </NavLink>
               </>
             )}
-            <NavLink to="/resister" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
+            <NavLink to="/blog" className={({ isActive }) => isActive ? 'text-primary pl-4 flex items-center' : 'text-white pl-5 flex items-center'}>
               Blogs
             </NavLink>
           </ul>
@@ -79,18 +85,18 @@ const Nav = () => {
           {isLoggedIn ? (
             <div className="flex justify-center gap-4">
               <div className="tooltip" data-tip={isLoggedIn.displayName ? isLoggedIn.displayName : 'No-Name'}>
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <label  className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src="" alt="Profile" />
+                    <img src=""  />
                   </div>
                 </label>
               </div>
-              <Link>
+              <Link >
                 <Button className="bg-primary text-white">Logout</Button>
               </Link>
             </div>
           ) : (
-            <Link>
+            <Link to={'/login'}>
               <Button className="bg-primary text-white">Login</Button>
             </Link>
           )}
