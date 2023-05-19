@@ -2,10 +2,10 @@ import React from 'react';
 
 const AddAToy = () => {
   return (
-    <div className=" hero min-h-screen flex justify-center items-center px-4 sm:px-8">
-      <div className="max-w-md w-full bg-white shadow-md rounded-lg overflow-hidden">
+    <div className="  p-16 min-h-screen flex justify-center items-center px-4 sm:px-8">
+      <div className="max-w-xl w-full  bg-white shadow-lg  rounded-lg overflow-hidden">
         <div className="py-4 px-6">
-          <h1 className="text-3xl font-bold text-center mb-6">Add A Toy</h1>
+          <h1 className="text-3xl font-bold text-center text-primary mb-6">Add A Toy</h1>
 
           <div className="mb-4">
             <label htmlFor="pictureUrl" className="block text-gray-700 font-semibold mb-2">
@@ -120,9 +120,9 @@ const AddAToy = () => {
 
           <button
             type="submit"
-            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded focus:outline-none hover:bg-blue-600"
+            className="btn btn-primary w-full text-white"
           >
-            Add Toy
+            Add A Toy
           </button>
         </div>
       </div>
