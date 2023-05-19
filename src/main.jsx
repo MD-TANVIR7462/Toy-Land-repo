@@ -14,6 +14,7 @@ import AuthProvider from './components/providers/AuthProvider.jsx';
 import ErrorPage from './components/Error/ErrorPage.jsx';
 import Altoys from './components/Altoys/Altoys.jsx';
 import Blog from './components/Blog/Blog.jsx';
+import AddAToy from './components/ADD a Toy/AddAToy.jsx';
 
 
 
@@ -55,6 +56,13 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+       
+
+
+      },
+      {
+        path: '/addatoy',
+        element:<AddAToy></AddAToy>
        
 
 
