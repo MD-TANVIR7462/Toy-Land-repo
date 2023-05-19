@@ -51,6 +51,13 @@ const router = createBrowserRouter([
 
 
       },
+      {
+        path: '/blog',
+        element: <Altoys></Altoys>,
+        loader:()=>fetch('http://localhost:5000/toyland')
+
+
+      },
     ]
 
   },

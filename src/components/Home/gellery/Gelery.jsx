@@ -1,54 +1,19 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import GeleryCard from '../GeleryCard/GeleryCard';
 
-const toys = [
-   {
-      id: 1,
-      name: 'Toy 1',
-      description: 'This is a description for Toy 1.',
-      rating: 4.5,
-      image: 'https://i.ibb.co/n6Jfjth/istockphoto-1322274556-612x612.jpg',
-   },
-   {
-      id: 2,
-      name: 'Toy 2',
-      description: 'This is a description for Toy 2.',
-      rating: 3.8,
-      image: 'https://i.ibb.co/HxmKSM2/stock-photo-kids-toys-collection-teddy-bear.jpg',
-   },
-   {
-      id: 3,
-      name: 'Toy 2',
-      description: 'This is a description for Toy 2.',
-      rating: 3.8,
-      image: 'https://i.ibb.co/27X6MMy/360-F-475829656-6cy29m7-UPXL4k7-EVUE0-GV2s-N8lffk6dm.jpg',
-   },
-   {
-      id: 4,
-      name: 'Toy 2',
-      description: 'This is a description for Toy 2.',
-      rating: 3.8,
-      image: 'https://i.ibb.co/FWHFRs6/depositphotos-83924492-stock-photo-pile-of-toys-on-blue.webp',
-   },
-   {
-      id: 5,
-      name: 'Toy 2',
-      description: 'This is a description for Toy 2.',
-      rating: 3.8,
-      image: 'https://i.ibb.co/LtKKgg5/pile-toys-isolated-on-white-260nw-321375317.webp',
-   },
-   {
-      id: 6,
-      name: 'Toy 2',
-      description: 'Meet our adorable Cuddly Teddy Bear! Soft and huggable, this plush companion will be your little ones best friend. Perfect for cuddles and comforting moments.',
-      rating: 3.8,
-      image: 'https://i.ibb.co/mGRNfnk/depositphotos-246705248-stock-photo-wooden-cart-stuffed-toys-constructor.webp',
-   },
-   
-];
 
 const Gallery = () => {
+   const [toys,setToys] =useState([])
+useEffect(()=>{
+fetch('http://localhost:5000/gelery')
+.then(res=>res.json())
+.then(data=>{ 
+   
+   console.log(data._id)
+   setToys(data)})
+},[])
+
    return (
       <div className='my-16 '>
 
@@ -60,7 +25,7 @@ const Gallery = () => {
 
          <div className=" md:grid grid-cols-3 gap-4">
             {
-               toys.map(toy => <GeleryCard toy={toy} key={toy.id}></GeleryCard>)
+               toys.map(toy => <GeleryCard toy={toy} key={toy._id}></GeleryCard>)
             }
          </div>
       </div>

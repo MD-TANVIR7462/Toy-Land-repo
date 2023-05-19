@@ -24,7 +24,7 @@ const Altoys = () => {
                </thead>
 
                {
-                  datas.map(data => <Tablee data={data}></Tablee>)
+                  datas.map(data => <Tablee data={data} key={data._id}></Tablee>)
                }
 
 
