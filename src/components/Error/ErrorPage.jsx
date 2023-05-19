@@ -3,11 +3,11 @@ import { useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
    const error = useRouteError()
-   console.log(error)
+  console.log(error)
    return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg text-center">
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKRj88twtglhqFyIg3Ubv1dUfrFfvbe4g2A&usqp=CAU' alt="Error" className="mx-auto mb-6 w-40 h-40" />
+        <img src='https://i.ibb.co/0KTTnKK/images-1.png' alt="Error" className="mx-auto mb-6 w-40 h-40" />
         <h2 className="text-3xl font-bold text-gray-800 mb-4">{error.error.message}</h2>
         <p className="text-gray-600 mb-6 text-7xl font-bold"> {error.status}</p>
         

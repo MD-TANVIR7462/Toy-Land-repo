@@ -12,6 +12,7 @@ import LoginPage from './components/Login/LoginPage.jsx';
 import Resister from './components/Resister/Resister.jsx';
 import AuthProvider from './components/providers/AuthProvider.jsx';
 import ErrorPage from './components/Error/ErrorPage.jsx';
+import Altoys from './components/Altoys/Altoys.jsx';
 
 
 
@@ -41,6 +42,13 @@ const router = createBrowserRouter([
       {
         path: '/resister',
         element: <Resister></Resister>
+
+      },
+      {
+        path: '/alltoys',
+        element: <Altoys></Altoys>,
+        loader:()=>fetch('http://localhost:5000/toyland')
+
 
       },
     ]
