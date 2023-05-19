@@ -15,9 +15,22 @@ const AddAToy = () => {
       const available_quantity = from.availableQuantity.value
       const description = from.description.value
       const picture = from.img.value
-      
+      const newToy = {toy_name,sellerEmail,seller_name,sub_category,price,rating,available_quantity,description,picture}
    
-     
+
+   fetch('http://localhost:5000/toyland',{
+      method : "post",
+      headers:{
+         "content-type" : "application/json"
+      },
+      body:JSON.stringify(newToy)
+   })
+   .then(res=>res.json())
+   .then(data=>{
+      console.log(data)
+      from.reset()
+   })
+    
    }
    
 
