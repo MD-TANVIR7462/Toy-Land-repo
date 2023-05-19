@@ -43,7 +43,34 @@ const AddAToy = () => {
             />
           </div>
 
- 
+          <div className="mb-4">
+            <label htmlFor="sellerEmail" className="block text-gray-700 font-semibold mb-2">
+              Seller Email
+            </label>
+            <input
+              type="email"
+              id="sellerEmail"
+              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="subCategory" className="block text-gray-700 font-semibold mb-2">
+              Sub-category
+            </label>
+            <select
+              id="subCategory"
+              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+              required
+            >
+              <option value="">Select Sub-category</option>
+              <option value="math">Dinosaur</option>
+              <option value="language">Teddy Bear</option>
+              <option value="science">Butterfly</option>
+            </select>
+          </div>
+
 
           <button
             type="submit"
