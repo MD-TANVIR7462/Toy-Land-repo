@@ -95,7 +95,7 @@ const LoginPage = () => {
                      <p className='text-end text-black font-medium'>
                         New Here?   <Link
                            to="/resister"
-                           className="font-medium text-green-500 hover:text-green-600"
+                           className="font-medium text-blue-600 hover:text-green-600"
                         >
                            Register Now....
                         </Link>

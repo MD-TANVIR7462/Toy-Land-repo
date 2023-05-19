@@ -15,7 +15,7 @@ const Altoys = () => {
                   <tr className='text-white bg-purple-400'>
 
                      <th className='pl-16 '>Toy Name</th>
-                     <th>Seller Name</th>
+                     <th>Seller Company Name </th>
                      <th>Sub-Category</th>
                      <th>Price</th>
                      <th>Available </th>
