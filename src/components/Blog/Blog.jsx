@@ -50,7 +50,53 @@ const Blog = () => {
         </div>
 
        
-       
+        <div className="bg-white shadow-md rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">What is Express.js? What is Nest.js?</h2>
+          <p>
+          <span className='text-secondary font-bold'>Ans :</span>     Express.js is a minimal and flexible web application framework for Node.js. It provides a set of features and
+            utilities to build web applications and APIs. Express.js simplifies the process of handling HTTP requests, routing,
+            and middleware integration, making it popular for building server-side applications in JavaScript or TypeScript.
+          </p>
+          <p>
+            Nest.js is a progressive Node.js framework for building efficient, scalable, and maintainable server-side applications.
+            It is built with TypeScript and takes advantage of modern JavaScript features and design patterns. Nest.js combines
+            elements of Object-Oriented Programming (OOP), Functional Programming (FP), and Reactive Programming to provide a
+            robust and extensible architecture. It offers modules, decorators, dependency injection, and other features to
+            streamline development and encourage code reusability.
+          </p>
+          <p>
+             Both Express.js and Nest.js are popular choices for building server-side applications, but they have different
+            approaches and feature sets. Express.js is lightweight and suitable for small to medium-sized projects, while
+            Nest.js provides a more structured and opinionated framework for larger applications with complex business logic and
+            scalability requirements.
+          </p>
+        </div>
+
+        
+        <div className="bg-white shadow-md rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">What is MongoDB aggregate and how does it work?</h2>
+          <p>
+          <span className='text-secondary font-bold'>Ans :</span>     MongoDB's aggregate is a powerful aggregation framework that allows you to perform advanced data analysis and
+            manipulation operations on MongoDB collections. It provides a flexible pipeline-based approach for transforming and
+            processing data.
+          </p>
+          <p>
+            The aggregate framework consists of a sequence of stages, where each stage performs a specific operation on the
+            input documents and passes the result to the next stage. Some common stages include $match (filtering documents),
+            $group (grouping documents by specified criteria), $project (selecting or reshaping fields), $sort (sorting
+            documents), and $lookup (performing a left outer join with other collections).
+          </p>
+          <p>
+            By combining different stages in the pipeline, you can create complex data transformations, aggregations, and
+            analytics queries. The aggregate framework provides powerful operators and expressions to manipulate data, perform
+            calculations, and generate meaningful insights.
+          </p>
+          <p>
+            Overall, MongoDB's aggregate framework offers a flexible and efficient way to process data within the database and
+            retrieve aggregated results, eliminating the need for multiple round trips to the server and reducing network
+            overhead.
+          </p>
+        </div>
       </div>
     </div>
   );

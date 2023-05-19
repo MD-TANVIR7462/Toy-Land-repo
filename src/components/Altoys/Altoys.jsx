@@ -1,9 +1,14 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Tablee from './Tablee';
 
 const Altoys = () => {
-   const datas = useLoaderData()
+   const [datas,setdatas]=useState([])
+  useEffect(()=>{
+   fetch('http://localhost:5000/toyland')
+   .then(res=>res.json())
+   .then(data=>setdatas(data))
+  },[])
+ 
    console.log(datas)
    return (
       <div>
