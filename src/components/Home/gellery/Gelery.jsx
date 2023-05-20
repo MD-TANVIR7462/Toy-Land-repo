@@ -6,7 +6,7 @@ import GeleryCard from '../GeleryCard/GeleryCard';
 const Gallery = () => {
    const [toys,setToys] =useState([])
 useEffect(()=>{
-fetch('http://localhost:5000/gelery')
+fetch('https://assignment-11-server-blue-rho.vercel.app/gelery')
 .then(res=>res.json())
 .then(data=>{ 
    

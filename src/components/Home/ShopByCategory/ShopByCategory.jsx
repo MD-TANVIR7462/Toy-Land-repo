@@ -5,7 +5,7 @@ import SingleShopByCetegory from './SingleShopByCetegory';
 const ShopByCategory = () => {
   const [categories,setcategories] = useState([])
 useEffect(()=>{
-fetch('http://localhost:5000/subcetgory')
+fetch('https://assignment-11-server-blue-rho.vercel.app/subcetgory')
 .then(res=>res.json())
 .then(data=>setcategories(data))
 },[])

@@ -20,7 +20,7 @@ const AddAToy = () => {
     const newToy = { toy_name, sellerEmail, seller_name, sub_category, price, rating, available_quantity, description, picture }
 
 
-    fetch('http://localhost:5000/toyland', {
+    fetch('https://assignment-11-server-blue-rho.vercel.app/toyland', {
       method: "post",
       headers: {
         "content-type": "application/json"

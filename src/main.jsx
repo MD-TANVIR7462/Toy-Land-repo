@@ -17,6 +17,8 @@ import Blog from './components/Blog/Blog.jsx';
 import AddAToy from './components/ADD a Toy/AddAToy.jsx';
 import Mytoys from './components/MyToys/Mytoys.jsx';
 import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
+import SingleTOy from './components/MyToys/SingleTOy.jsx';
+import ToyDetails from './components/singleTOyRoute/ToyDetails.jsx';
 
 
 
@@ -69,6 +71,12 @@ const router = createBrowserRouter([
       {
         path: '/mytoys',
         element:<PrivateRoute><Mytoys></Mytoys></PrivateRoute>
+      },
+      {
+        path: '/singletoy/:id',
+        element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader:({params})=>fetch(`https://assignment-11-server-blue-rho.vercel.app/toyland/${params.id}`)
+       
       },
     ]
 

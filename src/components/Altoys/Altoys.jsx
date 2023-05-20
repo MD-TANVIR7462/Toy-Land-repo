@@ -4,7 +4,7 @@ import Tablee from './Tablee';
 const Altoys = () => {
    const [datas,setdatas]=useState([])
   useEffect(()=>{
-   fetch('http://localhost:5000/toyland')
+   fetch('https://assignment-11-server-blue-rho.vercel.app/toyland')
    .then(res=>res.json())
    .then(data=>setdatas(data))
   },[])
