@@ -21,8 +21,7 @@ const Tablee = ({ data }) => {
 
   return (
 
-    <tbody className='my-10 border-2  border-indigo-950'>
-      {/* row 1 */}
+    <tbody className='my-10 border-2  border-indigo-950 '>
       <tr>
         <td>
           <div className="flex items-center space-x-3">
@@ -50,6 +49,13 @@ const Tablee = ({ data }) => {
       </tr>
 
     </tbody>
+
+
+
+
+
+
+
 
   );
 };

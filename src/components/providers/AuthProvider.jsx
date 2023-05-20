@@ -50,7 +50,8 @@ const updateUser=(name,url)=>{
       isLoggedIn,
       SignInUSer,
       signOutUSer,
-      updateUser
+      updateUser,
+      loading
 
    }
    return (

@@ -15,6 +15,8 @@ import ErrorPage from './components/Error/ErrorPage.jsx';
 import Altoys from './components/Altoys/Altoys.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import AddAToy from './components/ADD a Toy/AddAToy.jsx';
+import Mytoys from './components/MyToys/Mytoys.jsx';
+import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 
 
 
@@ -62,10 +64,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/addatoy',
-        element:<AddAToy></AddAToy>
-       
-
-
+        element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+      },
+      {
+        path: '/mytoys',
+        element:<PrivateRoute><Mytoys></Mytoys></PrivateRoute>
       },
     ]
 
