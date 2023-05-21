@@ -1,7 +1,8 @@
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -9,8 +10,9 @@ import { AuthContext } from '../providers/AuthProvider';
 
 
 const Resister = () => {
+   const navigate=useNavigate()
 
-   const { CreatUSerEmail, updateUser } = useContext(AuthContext)
+   const { CreatUSerEmail, updateUser,signOutUSer } = useContext(AuthContext)
 
    const handleResister = (e) => {
       e.preventDefault()
@@ -28,7 +30,15 @@ const Resister = () => {
 
             updateUser(name,url)
                .then(() => {
-                  alert('updated')
+                  signOutUSer()
+                  Swal.fire({
+                     position: 'top-center',
+                     icon: 'success',
+                     title: 'Resister Successfull LOGIN NOW!!',
+                     showConfirmButton: false,
+                     timer: 1500
+                   })
+                   navigate('/login')
                })
                .catch(error => {
                   console.log(error)

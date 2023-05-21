@@ -15,7 +15,7 @@ const navigate = useNavigate()
     const description = from.description.value
     const updatedProduct = { price, quantity, description }
 
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://assignment-11-server-blue-rho.vercel.app/update/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": 'application/json'
@@ -27,9 +27,9 @@ const navigate = useNavigate()
         if (data.modifiedCount > 0) {
 
           Swal.fire({
-            position: 'top-center',
+            position: 'top-end',
             icon: 'success',
-            title: 'Your product has been Updated',
+            title: 'Your work has been saved',
             showConfirmButton: false,
             timer: 1500
           })

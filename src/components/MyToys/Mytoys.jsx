@@ -11,58 +11,40 @@ const Mytoys = () => {
 
 
 
-   const deletHandle = (id) =>{
-
-
-
+   const deletHandle = (id) => {
       Swal.fire({
-       title: 'Are you sure?',
-       text: "You won't to Detel it???",
-       icon: 'warning',
-       showCancelButton: true,
-       confirmButtonColor: '#3085d6',
-       cancelButtonColor: '#d33',
-       confirmButtonText: 'Yes, delete it!'
-     }).then((result) => {
-       if (result.isConfirmed) {
-      
-       
-         fetch(`https://assignment-11-server-blue-rho.vercel.app/delete/${id}`,{
-            method:"delete"
-           })
-           .then(res=>res.json())
-           .then(data=>console.log(data))
+         title: 'Are you sure?',
+         text: "You won't be able to revert this!",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#3085d6',
+         cancelButtonColor: '#d33',
+         confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+         if (result.isConfirmed) {
 
-           Swal.fire(
-           'Deleted!',
-           'Your Product has been deleted.',
-           'success'
-         )
+            fetch(`https://assignment-11-server-blue-rho.vercel.app/delete/${id}`, {
+               method: "delete"
+            })
+               .then(res => res.json())
+               .then(data => console.log(data))
 
-       const remainingProduct = Userdata.filter(product=> product._id !== id)
-       setedata(remainingProduct)
-       }
-     })
-    
-    
-    }
+            Swal.fire(
+               'Deleted!',
+               'Your file has been deleted.',
+               'success'
+            )
+            const remainingProduct = Userdata.filter(product=> product._id !== id)
+          setedata(remainingProduct)
+         }
+      })
 
 
 
-//     const updated =(id)=>{
-// fetch(`http://localhost:5000/update/${id}`,{
-//    method:'PATCH',
-//    headers : {
-//       'content-type':'application/json'
-//    },
-//    body : JSON.stringify({status:'confirm'})
 
-// })
-// .then(res=>res.json())
-// .then(data=>{
-//    console.log(data)
-// })
-//     }
+
+   }
+
 
 
    useEffect(() => {
@@ -97,7 +79,7 @@ const Mytoys = () => {
 
 
                {
-                  Userdata.map(singleData => <SingleTOy singleData={singleData}  deletHandle={deletHandle} key={singleData._id}></SingleTOy>)
+                  Userdata.map(singleData => <SingleTOy singleData={singleData} deletHandle={deletHandle} key={singleData._id}></SingleTOy>)
                }
 
 
