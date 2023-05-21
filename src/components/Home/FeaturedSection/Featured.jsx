@@ -1,6 +1,7 @@
 
-import React from 'react';
-import SingleFetured from './SingleFetured';
+import React, { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const FeaturedSection = () => {
   const featuredToys = [
@@ -22,25 +23,45 @@ const FeaturedSection = () => {
       id: 3,
       name: 'Creative Octopus',
       image: 'https://i.ibb.co/x7BSXK4/0001196450398.webp',
-      description: 'Let your childs creativity soar with these colorful Octopus. Endless possibilities await!',
+      description: 'Let your child\'s creativity soar with these colorful Octopus. Endless possibilities await!',
       price: 19.99,
     },
-
   ];
 
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
+  const handleAddToCart = (toy) => {
+    // Handle the add to cart functionality here
+    console.log(`Added "${toy.name}" to cart.`);
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
+ <div className='my-10'>
+     <div className="container mx-auto px-4 ">
       <h2 className="text-3xl font-bold mb-6 text-primary text-center">Featured Toys</h2>
-
-<p className='text-center text-indigo-100 mb-8 font-bold text-base'>This toys will be come soon make sure you added this toys in your chart </p>
-
+      <p className="text-center text-indigo-100 mb-8 font-bold text-base">
+        These toys are coming soon. Make sure you add them to your cart!
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredToys.map((toy) => (
-          <div key={toy.id} className="bg-white rounded-lg shadow-lg p-6 transition duration-300 ease-in-out transform hover:scale-105">
+          <div
+            key={toy.id}
+            className="bg-white rounded-lg shadow-lg p-6 transition duration-300 ease-in-out transform hover:scale-105"
+            data-aos="fade-up"
+          >
             <div className="relative">
-              <img className="w-40 h-40 mx-auto mb-4" src={toy.image} alt={toy.name} />
+              <img className="w-40 h-40 mx-auto mb-4 rounded-full" src={toy.image} alt={toy.name} />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
-                <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                <button
+                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                  onClick={() => handleAddToCart(toy)}
+                >
                   Add to Cart
                 </button>
               </div>
@@ -52,8 +73,8 @@ const FeaturedSection = () => {
         ))}
       </div>
     </div>
+ </div>
   );
 };
 
 export default FeaturedSection;
-

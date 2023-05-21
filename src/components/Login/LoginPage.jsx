@@ -1,14 +1,16 @@
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { useState } from 'react';
 
 
 const LoginPage = () => {
-
+   const [error, seterror] = useState('')
    const { googleCreatUSer,SignInUSer } = useContext(AuthContext)
-  
-
+   const location = useLocation()
+   const navigate = useNavigate()
+   const mainlocation = location.state?.from?.pathname || '/'
 
    const handleLogin = (e) => {
       e.preventDefault()
@@ -19,14 +21,14 @@ const LoginPage = () => {
       .then((result) => {
        
          const user = result.user;
-         console.log(user)
+         
          from.reset()
+         navigate(mainlocation)
         
        })
        .catch((error) => {
          const errorCode = error.code;
-         const errorMessage = error.message;
-         console.log(errorMessage)
+         seterror(error.message)
        });
      
    };
@@ -36,16 +38,14 @@ const LoginPage = () => {
       googleCreatUSer()
       .then((result) => {
          const user = result.user;
-         console.log(user)
+         navigate(mainlocation)
+         
          
    
       })
          .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-   
-            console.log(errorMessage)
-   
+            seterror(error.message)
          });
    }
 
@@ -111,6 +111,11 @@ const LoginPage = () => {
                      Log in
                   </button>
                </div>
+               <p className='text-red-700'>
+                {
+                  error ? error : ''
+                }
+              </p>
             </form>
 
             <div className="mt-3">

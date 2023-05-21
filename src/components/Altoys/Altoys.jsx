@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Tablee from './Tablee';
 
@@ -6,15 +5,16 @@ const Altoys = () => {
   const [datas, setDatas] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [showLimit, setShowLimit] = useState(20);
 
   useEffect(() => {
     fetch('https://assignment-11-server-blue-rho.vercel.app/toyland')
       .then((res) => res.json())
       .then((data) => {
         setDatas(data);
-        setSearchResults(data);
+        setSearchResults(data.slice(0, showLimit));
       });
-  }, []);
+  }, [showLimit]);
 
   const handleSearch = (e) => {
     const query = e.target.value;
@@ -24,7 +24,11 @@ const Altoys = () => {
       data.toy_name.toLowerCase().includes(query.toLowerCase())
     );
 
-    setSearchResults(results);
+    setSearchResults(results.slice(0, showLimit));
+  };
+
+  const handleShowMore = () => {
+    setShowLimit(showLimit + 20);
   };
 
   return (
@@ -55,17 +59,20 @@ const Altoys = () => {
             {searchResults.map((data) => (
               <Tablee data={data} key={data._id} />
             ))}
-       
+          
         </table>
       </div>
-
-
- 
-
-
+      {searchResults.length < datas.length && (
+        <div className="flex justify-center mt-4">
+          <button
+            className="bg-primary text-white px-4 py-2 btn btn-outline border-none rounded-md focus:outline-none hover:bg-indigo-300 hover:text-white" 
+            onClick={handleShowMore}
+          >
+            Show More
+          </button>
+        </div>
+      )}
     </div>
-
-    
   );
 };
 

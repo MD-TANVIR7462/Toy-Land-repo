@@ -27,9 +27,9 @@ const navigate = useNavigate()
         if (data.modifiedCount > 0) {
 
           Swal.fire({
-            position: 'top-end',
+            position: 'top-center',
             icon: 'success',
-            title: 'Your work has been saved',
+            title: 'Your Toy has been Updated',
             showConfirmButton: false,
             timer: 1500
           })
@@ -49,20 +49,20 @@ const navigate = useNavigate()
               <label className="label">
                 <span className="label-text">Pirce</span>
               </label>
-              <input type="text" name='price' placeholder="Update Price" className="input input-bordered" />
+              <input type="text" name='price' required placeholder="Update Price" className="input input-bordered" />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Quantity</span>
               </label>
-              <input type="text" name='quantity' placeholder="Update Quantity" className="input input-bordered" />
+              <input type="text" name='quantity' required placeholder="Update Quantity" className="input input-bordered" />
 
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Description</span>
               </label>
-              <input type="text" name='description' placeholder="Update Description" className="input input-bordered" />
+              <input type="text" name='description' required placeholder="Update Description" className="input input-bordered" />
 
             </div>
             <div className="form-control mt-6">
