@@ -12,6 +12,9 @@ const Mytoys = () => {
 
 
    const deletHandle = (id) =>{
+
+
+
       Swal.fire({
        title: 'Are you sure?',
        text: "You won't to Detel it???",
@@ -23,14 +26,14 @@ const Mytoys = () => {
      }).then((result) => {
        if (result.isConfirmed) {
       
-       fetch(`http://localhost:5000/toyland/${id}`,{
-          method:"delete"
-       })
-       .then(res=>res.json())
-       .then(data=>{
-          
-          console.log(data)})
-       Swal.fire(
+       
+         fetch(`https://assignment-11-server-blue-rho.vercel.app/delete/${id}`,{
+            method:"delete"
+           })
+           .then(res=>res.json())
+           .then(data=>console.log(data))
+
+           Swal.fire(
            'Deleted!',
            'Your Product has been deleted.',
            'success'
@@ -43,6 +46,23 @@ const Mytoys = () => {
     
     
     }
+
+
+
+//     const updated =(id)=>{
+// fetch(`http://localhost:5000/update/${id}`,{
+//    method:'PATCH',
+//    headers : {
+//       'content-type':'application/json'
+//    },
+//    body : JSON.stringify({status:'confirm'})
+
+// })
+// .then(res=>res.json())
+// .then(data=>{
+//    console.log(data)
+// })
+//     }
 
 
    useEffect(() => {
@@ -77,7 +97,7 @@ const Mytoys = () => {
 
 
                {
-                  Userdata.map(singleData => <SingleTOy singleData={singleData} deletHandle={deletHandle} key={singleData._id}></SingleTOy>)
+                  Userdata.map(singleData => <SingleTOy singleData={singleData}  deletHandle={deletHandle} key={singleData._id}></SingleTOy>)
                }
 
 

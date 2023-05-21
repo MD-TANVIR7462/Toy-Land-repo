@@ -19,6 +19,7 @@ import Mytoys from './components/MyToys/Mytoys.jsx';
 import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 import SingleTOy from './components/MyToys/SingleTOy.jsx';
 import ToyDetails from './components/singleTOyRoute/ToyDetails.jsx';
+import Update from './components/Update/Update.jsx';
 
 
 
@@ -78,6 +79,12 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`https://assignment-11-server-blue-rho.vercel.app/toyland/${params.id}`)
        
       },
+      {
+        path: '/updateDetails/:id',
+        element:<Update></Update>,
+        loader:({params})=>fetch(`https://assignment-11-server-blue-rho.vercel.app/toyland/${params.id}`)
+       
+      }
     ]
 
   },
