@@ -31,6 +31,9 @@ const FeaturedSection = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold mb-6 text-primary text-center">Featured Toys</h2>
+
+<p className='text-center text-indigo-100 mb-8 font-bold text-base'>This toys will be come soon make sure you added this toys in your chart </p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredToys.map((toy) => (
           <div key={toy.id} className="bg-white rounded-lg shadow-lg p-6 transition duration-300 ease-in-out transform hover:scale-105">

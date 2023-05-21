@@ -3,7 +3,7 @@ import Benner from './Benner/Benner';
 import Gelery from './gellery/Gelery';
 import Featured from './FeaturedSection/Featured';
 import ShopByCategory from './ShopByCategory/ShopByCategory';
-import Extra from './Extra section/Extra';
+import TopSellersSection from '../TopSellerSection/TopSellerSection';
 
 const HomeMain = () => {
    return (
@@ -12,7 +12,7 @@ const HomeMain = () => {
         <Gelery></Gelery>
         <Featured></Featured>
         <ShopByCategory></ShopByCategory>
-        <Extra></Extra>
+        <TopSellersSection></TopSellersSection>
       </div>
    );
 };
