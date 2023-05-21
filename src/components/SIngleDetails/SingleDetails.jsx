@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SinglePh from './SinglePh';
+import useTiitle from '../../hooks/useTitle';
 
 const SingleDetails = () => {
+    useTiitle('Details')
 
    const loaderData = useLoaderData()
    console.log(loaderData)

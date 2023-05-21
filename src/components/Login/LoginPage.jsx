@@ -3,9 +3,11 @@ import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { useState } from 'react';
+import useTiitle from '../../hooks/useTitle';
 
 
 const LoginPage = () => {
+   useTiitle('Login')
    const [error, seterror] = useState('')
    const { googleCreatUSer,SignInUSer } = useContext(AuthContext)
    const location = useLocation()

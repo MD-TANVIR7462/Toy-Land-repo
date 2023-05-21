@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import SingleTOy from './SingleTOy';
 import Swal from 'sweetalert2';
+import useTiitle from '../../hooks/useTitle';
 
 const Mytoys = () => {
+   useTiitle('My Toys')
    const [Userdata, setedata] = useState(null)
 
    const { isLoggedIn } = useContext(AuthContext)

@@ -1,8 +1,9 @@
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useTiitle from '../../hooks/useTitle';
 
 
 
@@ -10,9 +11,11 @@ import Swal from 'sweetalert2';
 
 
 const Resister = () => {
-   const navigate=useNavigate()
+   useTiitle('Resister')
+   const [error, seterror] = useState('')
+   const navigate = useNavigate()
 
-   const { CreatUSerEmail, updateUser,signOutUSer } = useContext(AuthContext)
+   const { CreatUSerEmail, updateUser, signOutUSer } = useContext(AuthContext)
 
    const handleResister = (e) => {
       e.preventDefault()
@@ -28,7 +31,7 @@ const Resister = () => {
             const user = userCredential.user;
             console.log(user)
 
-            updateUser(name,url)
+            updateUser(name, url)
                .then(() => {
                   signOutUSer()
                   Swal.fire({
@@ -37,11 +40,12 @@ const Resister = () => {
                      title: 'Resister Successfull LOGIN NOW!!',
                      showConfirmButton: false,
                      timer: 1500
-                   })
-                   navigate('/login')
+                  })
+                  navigate('/login')
                })
                .catch(error => {
-                  console.log(error)
+                  const errorCode = error.code;
+                  seterror(error.message)
                })
             from.reset()
 
@@ -49,12 +53,11 @@ const Resister = () => {
 
          .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage)
+                  seterror(error.message)
          });
 
 
-      console.log(url, name, email, password)
+     
    }
    return (
       <div>
@@ -132,6 +135,11 @@ const Resister = () => {
                         />
                      </div>
                   </div>
+                  <p className='text-red-700'>
+                     {
+                        error ? error : ''
+                     }
+                  </p>
                   <div className="flex items-center justify-between my-3">
                      <div className="text-sm ">
                         <p className='text-end text-black font-medium'>
@@ -146,6 +154,7 @@ const Resister = () => {
 
                   </div>
                   <div className="mt-6">
+
                      <button
                         type="submit"
                         className='btn w-full bg-success border-none text-white  shadow-md shadow-gray-300 hover:text-black hover:bg-primary '

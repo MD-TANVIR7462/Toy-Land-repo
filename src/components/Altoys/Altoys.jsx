@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Tablee from './Tablee';
+import useTiitle from '../../hooks/useTitle';
 
 const Altoys = () => {
+   useTiitle('All Toys')
   const [datas, setDatas] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);

@@ -2,11 +2,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useTiitle from '../../hooks/useTitle';
 
 const AddAToy = () => {
   const { isLoggedIn } = useContext(AuthContext);
-
+useTiitle('Add A Toy')
   const handleAddToy = (e) => {
+   useTiitle('Add a Toy')
     e.preventDefault();
     const form = e.target;
     const toy_name = form.name.value;
