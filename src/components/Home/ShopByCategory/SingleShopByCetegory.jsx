@@ -9,8 +9,8 @@ const handleSHOPdatails = (id)=>{
   console.log(id)
 }
    return (
-      <div>
-         <div className="bg-[#2c2c6c]  md:w-[400px] rounded-lg shadow-md">
+      <div className='mb-5'>
+         <div className="bg-[#2c2c6c] w-[250px]  md:w-[360px] rounded-lg shadow-md">
             <img src={subCategory.image} alt={subCategory.name} className="w-full object-cover rounded-t-lg" />
             <div className="p-4">
                <h3 className="text-xl font-medium mb-2">{subCategory.name}</h3>
