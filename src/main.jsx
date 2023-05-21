@@ -20,6 +20,7 @@ import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 import SingleTOy from './components/MyToys/SingleTOy.jsx';
 import ToyDetails from './components/singleTOyRoute/ToyDetails.jsx';
 import Update from './components/Update/Update.jsx';
+import SingleDetails from './components/SIngleDetails/SingleDetails.jsx';
 
 
 
@@ -61,6 +62,14 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+       
+
+
+      },
+      {
+        path: '/singleDetails/:id',
+        element: <PrivateRoute><SingleDetails></SingleDetails></PrivateRoute>,
+        loader  : ({params})=>fetch(`https://assignment-11-server-blue-rho.vercel.app/subcetgory/${params.id}`)
        
 
 

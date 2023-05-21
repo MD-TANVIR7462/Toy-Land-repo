@@ -10,7 +10,9 @@ const App = () => {
     <main className='w-11/12 mx-auto'>
     <Outlet></Outlet>
     </main>
-      <Footer></Footer>
+     <div>
+     <Footer></Footer>
+     </div>
     </div>
   );
 };

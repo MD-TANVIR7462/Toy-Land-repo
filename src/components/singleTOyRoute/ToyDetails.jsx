@@ -44,23 +44,5 @@ sellerEmail,
    );
 };
 
-export default ToyDetails;   <div className="hero md:h-[550px] md:py-8 md:px-14  bg-base-200  ">
-
-      <div className="hero-content flex-col lg:flex-row gap-11">
-
-       
-         <img src="" className=" md:max-w-xl   rounded-lg shadow-2xl" />
-           
-     
-          
-         <div>
-            <h1 className="text-lg md:text-3xl pb-8 text-center font-bold"><span className='text-pink-700'>I'm</span> name</h1>
-
-            <p className='text-center font-bold text-gray-600 text-xl'>About Me</p>
-            <p className="py-1"><span className='text-lg  font-semibold text-primary'>Bio :</span> <span className='text-gray-500'>Hi I'm a Chef,I hade a high level Experience and Quality for Making  Delacious food, Here I give all The details about Me, What you should have to KNow </span></p>
-            <p className='font-medium ' ><span className='font-bold text-primary'>Experience : </span >  <span className='text-gray-600'> 6 Years</span></p>
-            <p className='font-medium py-2' ><span className='font-bold text-primary'>Recipes : </span ><span className='text-gray-600'>55 Recipes</span>  </p>
-            <p className='font-medium' ><span className='font-bold text-primary'>Likes : </span ><span className='text-gray-600'> num Likes</span> </p>
-         </div>
-      </div>
-   </div>
+export default ToyDetails;   
+ 

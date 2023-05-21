@@ -66,7 +66,11 @@ const signout =()=>{
             </ul>
           </div>
           <Link to="/" className="font-bold text-base md:text-3xl text-white">
+      <div className='flex items-center'>
+      <img src={"https://i.ibb.co/nn3wrvV/attachment-27003237.png"} className='w-12 flex rounded-full' alt="" />
             <span className="text-white">ToYLand</span>
+      </div>
+            
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex text-base">

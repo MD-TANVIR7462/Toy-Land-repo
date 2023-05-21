@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import SingleShopByCetegory from './SingleShopByCetegory';
+import { useNavigate } from 'react-router-dom';
 
 const ShopByCategory = () => {
   const [categories,setcategories] = useState([])
@@ -10,11 +11,14 @@ fetch('https://assignment-11-server-blue-rho.vercel.app/subcetgory')
 .then(data=>setcategories(data))
 },[])
 
+
+
+
   return (
     <div className="py-20 ">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center text-primary mb-8">Shop by Category</h2>
-        <Tabs>
+        <Tabs className='text-xs md:text-base'>
           <TabList className="flex justify-center mb-6">
             {categories.map((category, index) => (
               <Tab
@@ -29,8 +33,8 @@ fetch('https://assignment-11-server-blue-rho.vercel.app/subcetgory')
 
           {categories.map((category, index) => (
             <TabPanel key={index}>
-              <div className="grid justify-items-center md:grid-cols-3 md:gap-6">
-                {category.subCategories.map(subCategory => <SingleShopByCetegory subCategory={subCategory} key={subCategory.id}></SingleShopByCetegory> )}
+              <div className="grid mb-5 justify-items-center md:grid-cols-3 md:gap-6">
+                {category.subCategories.map(subCategory => <SingleShopByCetegory subCategory={subCategory} key={subCategory.id} category={category}></SingleShopByCetegory> )}
               </div>
             </TabPanel>
           ))}
